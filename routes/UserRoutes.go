@@ -12,7 +12,8 @@ import (
 func UserRoutes(incomingRoutes *gin.Engine) {
 	// auth:= incomingRoutes.Use(middleware.JwtOauthUser()) // Not required
 	incomingRoutes.POST("/register", controllers.RegisterUser())
-	incomingRoutes.GET("/login", controllers.LoginUser())
+	// incomingRoutes.GET("/login", controllers.LoginUser())
+	incomingRoutes.POST("/login", controllers.LoginUser())
 	incomingRoutes.POST("/dashboard", middleware.JwtOauthUser(), controllers.DashBoard())
 	incomingRoutes.POST("/logout", controllers.LogoutUser())
 }
