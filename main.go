@@ -21,4 +21,6 @@ func main() {
 	database.Connect()
 
 	routes.UserRoutes(r)
+	r.Run(":8080")
+
 }
